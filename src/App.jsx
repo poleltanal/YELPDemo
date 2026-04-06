@@ -11,7 +11,7 @@ function App() {
         setLoading(true);
         try {
             const res = await axios.get(
-                "http://localhost:5000/api/restaurants",
+                "https://yelpdemo-backend.onrender.com/api/restaurants",
                 {
                     params: { city },
                 },
@@ -26,7 +26,6 @@ function App() {
 
     return (
         <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
-            {/* Hero / Search Section */}
             <header className="bg-white shadow-sm border-b">
                 <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
                     <h1 className="text-3xl md:text-4xl font-extrabold text-indigo-600 mb-2">
@@ -55,11 +54,8 @@ function App() {
                     </div>
                 </div>
             </header>
-
-            {/* Results Section */}
             <main className="max-w-6xl mx-auto px-4 py-10">
                 {loading ? (
-                    // 🔄 Loading State
                     <div className="flex flex-col items-center justify-center py-20">
                         <div className="w-12 h-12 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin mb-4"></div>
                         <p className="text-gray-500 text-lg">
@@ -67,7 +63,6 @@ function App() {
                         </p>
                     </div>
                 ) : restaurants.length > 0 ? (
-                    // ✅ Results
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {restaurants.map((r, i) => (
                             <div
@@ -109,7 +104,6 @@ function App() {
                         ))}
                     </div>
                 ) : (
-                    // ❌ Empty State
                     <div className="text-center py-20">
                         <div className="text-6xl mb-4">🍽️</div>
                         <h3 className="text-xl font-medium text-gray-400">
