@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
     const [city, setCity] = useState("");
@@ -112,6 +113,7 @@ function App() {
                     </div>
                 )}
             </main>
+            <Analytics />
         </div>
     );
 }
